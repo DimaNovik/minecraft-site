@@ -1,0 +1,95 @@
+/*
+Tabs content:
+
+	*normalize
+	*header
+	*main
+		**best
+		**works
+		**cleaning
+		**service
+		**order_now
+		**animation
+		**tabs
+		**review
+	*footer
+	*media-queries
+*/
+
+@font-face {
+    font-family: 'Akrobat';
+    src: local('../fonts/Akrobat/'), url('../fonts/Akrobat/Akrobat.woff2') format('woff2'), url('../fonts/Akrobat/Akrobat.woff') format('woff'), url('../fonts/Akrobat/Akrobat.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Molot';
+    src: local('../fonts/Molot/'), url('../fonts/Molot/molot.woff2') format('woff2'), url('../fonts/Molot/molot.woff') format('woff'), url('../fonts/Molot/molot.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*================= *normalize =================*/
+
+// @import "normalize";
+
+/*================= END *normalize =================*/
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+*::selection{
+	background-color: #FFCC01;
+}
+
+.container {
+	width: 1630px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	font-family: "Akrobat", sans-serif;
+}
+p {
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Akrobat',  sans-serif;
+	font-weight: 800;
+	margin: 0;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+input, textarea, button{
+	font-family: 'Akrobat', sans-serif;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+@import "header";
+@import "main";
+@import "footer";
+@import "media-queries";
+@import "animation";

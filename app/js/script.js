@@ -48,6 +48,7 @@ $(document).ready(function() {
 	function hoverFirstMenu() {
 		$('.dropdown').on('mouseover click', function(event) {
 			event.preventDefault();
+
 			$('.dropdown-menu').each(function() {
 				$(this).removeClass('showed');
 			});
@@ -66,11 +67,23 @@ $(document).ready(function() {
 				}
 			})
 			$(this).parent('li').children('.dropdown-menu').addClass('showed');
-		});
-		$('.dropdown').on('mouseleave', function(event) {
-			$('.dropdown-menu').each(function() {
-				$(this).removeClass('showed');
+			$('.dropdown-menu').on('mouseleave', function() {
+				$(this).each(function() {
+					$(this).removeClass('showed');
+				});
 			});
+			// close dropdown-menu when mouseleave
+			$('.dropdown').parent('li').on('mouseleave', function() {
+				$('.dropdown-menu').each(function() {
+					$(this).removeClass('showed');
+				});
+			})
+			$('.dropdown-second').parent('li').on('mouseleave', function() {
+				$('.dropdown-second').removeClass('active');
+				$('.dropdown-second-menu').each(function() {
+					$(this).removeClass('showed');
+				});
+			})
 		});
 	}
 	// Hover for second dropdown menu
@@ -138,7 +151,7 @@ $(document).ready(function() {
 	// Clear placeholder
 	$('#search-val').click(function() {
 		$(this).attr('placeholder','');
-	})
+	});
 	// Clear search input value
 	$('.search-area-form span').click(function() {
 		$('#search-val').val('').attr('placeholder', 'Что ищем?');
@@ -197,24 +210,56 @@ $(document).ready(function() {
 			$(this).html('Ответить');
 		}
 	});
-	// Init owlcarousel slider
-	$('.card-area-slider-preview').owlCarousel({
+	//Init owlcarousel slider main
+	$('.card-area-slider-first').owlCarousel({
 		loop: true,
-		margin:10,  
+		margin: 10,  
 		dots: false,
 		nav: false,
+		URLhashListener:true,
+		lazyLoad:true,
+		video: true,
 		responsive:{
 			0:{
-				items:3,
+				items:1,
 				margin: 20,
-
 				center: true,
 			},
 			600:{
-				items:3
+				items:1
 			},
 			1000:{
-				items:5
+				items:1
+			}
+		}
+	})
+	// Init owlcarousel slider preview
+	$('.card-area-slider-second').owlCarousel({
+		loop: true, 
+		dots: false,
+		nav: false,
+		center:true,
+		responsive:{
+			0:{
+				items:2,
+				margin: 5,
+			},
+			600:{
+				items:3, 
+				margin: 10,
+
+			},
+			1200:{
+				items:3
+			},
+			1400:{
+				items:1,
+				center: true,
+				margin: 10,
+			},
+			1600:{
+				items:5,
+				center: true,
 			}
 		}
 	})

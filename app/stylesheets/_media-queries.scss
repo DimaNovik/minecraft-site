@@ -245,6 +245,7 @@
 		&-top-area {
 			display: none;
 		}
+		
 		&-nav-burger {
 			display: block;
 			cursor: pointer;
@@ -272,7 +273,9 @@
 					padding: 15px 10px;
 				}
 			}
-			 
+			.header-top-social-mob {
+				display: block;
+			}
 		}
 		&-main-photo {
 			height: 250px;
@@ -423,11 +426,28 @@
 				font-size: 16px;
 			}
 		}
+		&-main-slider {
+			height: 300px;
+			.card-area-slider-first {
+				.slider-main-preview-item {
+					height: 300px;
+				}
+			}
+			.card-area-slider-second {
+				top: 75%;
+				.slider-preview-item {
+					max-width: 140px;
+				}
+			}
+
+		}
+
 	}
 	.card {
 		&-main-text {
 			font-size: 14px;
 		}
+
 	}
 	.card-view-page {
 		.card-main-info {
@@ -440,11 +460,28 @@
 		h3 {
 			font-size: 22px;
 		}
+		&-form {
+			margin-bottom: 20px;
+			input {
+				padding: 15px 10px;
+				font-size: 12px;
+			}
+			textarea {
+				padding: 15px 10px;
+				font-size: 12px;
+			}
+		}
 		&-text {
+			margin-bottom: 20px;
 			p {
 				font-size: 14px;
 			}
 		}
+		.comment-area-second-level {
+			padding-left: 20px;
+
+		}
+
 	}
 }
 @media screen and (max-width: 420px) { 
